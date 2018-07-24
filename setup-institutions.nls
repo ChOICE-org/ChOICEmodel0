@@ -1,3 +1,19 @@
-to setup-institutions
+extensions [nw]
 
+to setup-institutions
+  let cliques nw:maximal-cliques
+  foreach cliques [clique -> 
+    if count clique >= 3 [
+      create-institutions 1 [
+        set members clique
+        let xM mean [xcor] of members
+        let yM mean [xcor] of members
+        setxy xM yM
+        init-rule
+        revise-rule
+        set shape "house"
+        set size 2
+      ]
+    ]
+  ]
 end
