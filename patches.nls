@@ -1,0 +1,6 @@
+
+patches-own [
+  r  ;; growth rate
+  q  ;; actual quantity
+  k  ;; carying capacity
+]

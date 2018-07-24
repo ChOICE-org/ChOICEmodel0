@@ -2,21 +2,14 @@ breed [ actors actor]
 breed [ institutions institution]
 breed [ rules rule]
 
-__includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls"
-           "institutions.nls" "actors.nls" "rules.nls"]
-
-patches-own [
-  r  ;; growth rate
-  q  ;; actual quantity
-  k  ;; carying capacity
-]
-
-
+__includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setup-rules.nls"
+           "institutions.nls" "actors.nls" "rules.nls" "patches.nls"]
 
 to setup
   clear-all
   setup-patches
   setup-actors
+  setup-rules
   setup-institutions
   reset-ticks
 end
