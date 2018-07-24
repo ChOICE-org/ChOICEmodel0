@@ -1,4 +1,3 @@
-
 breed [ actors actor]
 breed [ institutions institution]
 breed [ rules rule]
@@ -6,14 +5,17 @@ breed [ rules rule]
 __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls"]
 
 to setup
+  clear-all
   setup-patches
   setup-actors
   setup-institutions
+  reset-ticks
 end
 
 
 to go
 
+  tick
 end
 @#$#@#$#@
 GRAPHICS-WINDOW

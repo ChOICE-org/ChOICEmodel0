@@ -1,3 +1,5 @@
 to setup-patches
-set pcolor green
+ask patches[
+ set pcolor green
+ ]
 end
