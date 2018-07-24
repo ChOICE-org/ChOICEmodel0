@@ -13,6 +13,7 @@ patches-own [
 to setup
   clear-all
   setup-patches
+   patches-setColor
  ;; setup-actors
  ;; setup-rules
 ;;  setup-institutions
