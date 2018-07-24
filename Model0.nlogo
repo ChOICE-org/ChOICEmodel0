@@ -270,6 +270,21 @@ max-distance-to-rule
 0
 Number
 
+SLIDER
+7
+234
+108
+267
+connectivity
+connectivity
+0
+20
+10.0
+1
+1
+NIL
+HORIZONTAL
+
 @#$#@#$#@
 ## WHAT IS IT?
 
