@@ -20,11 +20,7 @@ end
 
 to go
   patches-update
-<<<<<<< HEAD
 update-actors
-=======
-  update-actors
->>>>>>> origin/master
   tick
 end
 @#$#@#$#@
@@ -106,25 +102,6 @@ NIL
 NIL
 1
 
-SLIDER
-6
-130
-98
-163
-diff-rate
-diff-rate
-0
-1
-<<<<<<< HEAD
-0.4
-=======
-0.5
->>>>>>> origin/master
-0.1
-1
-NIL
-HORIZONTAL
-
 PLOT
 545
 10
@@ -168,10 +145,25 @@ INPUTBOX
 56
 229
 Rg
-1.0
+0.0
 1
 0
 Number
+
+SLIDER
+51
+307
+223
+340
+diff-rate
+diff-rate
+0
+100
+50.0
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
