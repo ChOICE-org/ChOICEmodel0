@@ -5,6 +5,13 @@ set-current-plot "institution-sizes"
       set-plot-pen-color color
         plotxy ticks count members
 ]
+  set-current-plot "welfare-in-institutions"
+  ask institutions [
+      set-plot-pen-color color
+    plotxy ticks count members with [energy > 0]
+]
+  
+  
   set-current-plot "institution-rules"
   ask institutions [
       set-plot-pen-color color
