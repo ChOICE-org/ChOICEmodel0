@@ -13,6 +13,7 @@ to patches-update
   ask patches [
     set q  (q + (r * q / k))
   ]
+  
   diffuse q diff-rate
   patches-setColor
 end

@@ -15,9 +15,9 @@ to update-actors
 
     ;;harvest
     ask actors [
-    set color pcolor
-    set energy harvest-rate * [q] of patch-here
-    set ([q] of patch-here) ([q] of patch-here - energy)
+    set energy harvest-rate * q
+    set q (q - energy) ;;() ([q] of patch-here - energy)
+    show q
     ]
 
     ;;share
@@ -26,6 +26,7 @@ to update-actors
         let share share-rate * energy / count link-neighbors
         ask link-neighbors [
             set doggybag doggybag + share
+        ask link-with myself [set thickness share]
         ]
         set energy (energy - share-rate * energy)
         ]
