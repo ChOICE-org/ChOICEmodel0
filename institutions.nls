@@ -1,4 +1,17 @@
 institutions-own[
   members    ;; actors parts of institution
   attachment ;; relation of actors to the institution (?)
+  rule ;; rule promoted by the institution
 ]
+
+to init-members
+  set members (turtle-set nobody)
+end
+  
+to add-member [anActor]
+  set members (turtle-set members anActor)
+end
+
+to remove-member [anActor]
+  set members ([other members] of anActor)
+end
