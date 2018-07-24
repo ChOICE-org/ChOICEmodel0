@@ -1,7 +1,14 @@
-__includes["setup.nls"]
+
+breed [ actors actor]
+breed [ institutions institution]
+breed [ rules rule]
+
+__includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls"]
 
 to setup
   setup-patches
+  setup-actors
+  setup-institutions
 end
 
 
