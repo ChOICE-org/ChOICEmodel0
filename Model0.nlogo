@@ -1,4 +1,4 @@
-globals[ production needs]
+globals[ production needs max-distance-to-rule]
 breed [ actors actor]
 breed [ institutions institution]
 breed [ rules rule]
@@ -9,6 +9,7 @@ __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setu
 
 to setup
   clear-all
+  set max-distance-to-rule 0.15
   setup-patches
   patches-setColor
   setup-actors
@@ -21,6 +22,7 @@ end
 to go
   patches-update
   update-actors
+  update-institutions
   tick
 end
 @#$#@#$#@
@@ -159,7 +161,22 @@ diff-rate
 diff-rate
 0
 1
-0.5
+0.3
+0.1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+9
+431
+173
+464
+making-mate-rate
+making-mate-rate
+0
+1
+0.2
 0.1
 1
 NIL

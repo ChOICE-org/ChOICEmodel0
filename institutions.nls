@@ -7,7 +7,7 @@ institutions-own[
 to init-members
   set members (turtle-set nobody)
 end
-  
+
 to add-member [anActor]
   set members (turtle-set members anActor)
 end
@@ -16,9 +16,37 @@ to remove-member [anActor]
   set members ([other members] of anActor)
 end
 
-to revise-rule
+to update-members
+  let hr [harvest-rate] of myRule
+  let sr [share-rate] of myRule
+  set members actors with [sqrt ((harvest-rate - hr) ^ 2   + (share-rate - sr) ^ 2) < max-distance-to-rule]
+  let instit self
+  ifelse any? members [
+  ask members [set myInstitutions (turtle-set myInstitutions instit)]
+  let xM mean [xcor] of members
+  let yM mean [ycor] of members
+  setxy xM yM
+    set hidden? false
+  ] [set hidden? true]
+end
+
+to update-institutions
+  ask institutions [init-members]
+  ask actors [set myInstitutions (turtle-set nobody)]
+  ask institutions [update-members]
+end
+
+to revise-rule-old
   let hr mean [harvest-rate] of members
   let sr mean [share-rate] of members
   set myRule one-of rules with-min [(harvest-rate - hr) ^ 2   + (share-rate - sr) ^ 2]
   ask myRule [set nb-uses nb-uses + 1]
+end
+
+to-report get-harvest-rate
+  report [harvest-rate] of myRule
+end
+
+to-report get-share-rate
+  report [share-rate] of myRule
 end

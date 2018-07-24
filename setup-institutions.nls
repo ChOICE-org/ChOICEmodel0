@@ -1,6 +1,27 @@
 extensions [nw]
 
 to setup-institutions
+  ask rules [
+    hatch-institutions 1 [
+      set myRule myself
+      let hr [harvest-rate] of myRule
+      let sr [share-rate] of myRule
+      ;ask actors [ show sqrt ((harvest-rate - hr) ^ 2   + (share-rate - sr) ^ 2) ]
+      set members actors with [ (sqrt ((harvest-rate - hr) ^ 2   + (share-rate - sr) ^ 2)) < max-distance-to-rule]
+      ask members [set myInstitutions (turtle-set myInstitutions myself)]
+      ifelse count members  > 0 [
+      let xM mean [xcor] of members
+      let yM mean [ycor] of members
+      setxy xM yM
+      set shape "house"
+        set size 6
+      set hidden? false]
+      [set hidden? true]
+    ]
+  ]
+end
+
+to setup-institutions-old
   let cliques nw:maximal-cliques
   foreach cliques [clique -> 
     if count clique >= 3 [
@@ -9,7 +30,7 @@ to setup-institutions
         let xM mean [xcor] of members
         let yM mean [ycor] of members
         setxy xM yM
-        revise-rule
+        revise-rule-old
         set shape "house"
         set size 6
         ask members [set myInstitutions (turtle-set myInstitutions myself)]

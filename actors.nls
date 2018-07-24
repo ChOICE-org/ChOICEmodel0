@@ -41,15 +41,50 @@ to update-actors
   ask actors [
     set energy (energy - need)
     set size 2;(max list energy 1) / 50
-    if energy < 0 [
+  ]
+  
+  ask actors [
+     ifelse energy < 0 [
       set bad-times bad-times + 1
+      leave-the-system
       actor-udate-links
     ]
+    [
+      embrace-the-system
+    ]
   ]
+  
+  
 end
 
 to actor-udate-links
   let nb-friends count link-neighbors
-  repeat nb-friends / 3 [ask one-of link-neighbors [die]]
-  repeat nb-friends / 3 [create-link-with one-of other actors]
+  repeat nb-friends * making-mate-rate [ask one-of my-links [die]]
+  repeat nb-friends * making-mate-rate [create-link-with one-of other actors]
+end
+
+to actor-udate-links-with-friends
+  let nb-friends count link-neighbors
+  repeat nb-friends * making-mate-rate [ask one-of my-links [die]]
+  let friends turtle-set nobody
+  ask myInstitutions [
+    set friends (turtle-set friends members)
+  ]
+  repeat nb-friends * making-mate-rate [create-link-with one-of other friends]
+end
+
+to leave-the-system
+  let best-friend with-max [energy] link-neighbors
+  if any? best-friend [
+  set harvest-rate (harvest-rate + [harvest-rate] of one-of best-friend) / 2
+  set share-rate (share-rate + [share-rate] of one-of best-friend) / 2
+  ]
+end
+
+to embrace-the-system
+  if count myInstitutions > 0 [
+  let best-friend one-of myInstitutions
+  set harvest-rate (harvest-rate + [get-harvest-rate] of best-friend) / 2
+  set share-rate (share-rate + [get-share-rate] of best-friend) / 2
+  ]
 end
