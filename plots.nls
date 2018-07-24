@@ -8,7 +8,9 @@ set-current-plot "institution-sizes"
   set-current-plot "welfare-in-institutions"
   ask institutions [
       set-plot-pen-color color
-    plotxy ticks count members with [energy > 0]
+    if count members > 0 [
+    plotxy ticks count members with [energy > 0] / count members
+    ]
 ]
   
   

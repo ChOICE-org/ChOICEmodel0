@@ -9,7 +9,6 @@ __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setu
 
 to setup
   clear-all
-  set max-distance-to-rule 0.15
   setup-patches
   patches-setColor
   setup-actors
@@ -152,7 +151,7 @@ INPUTBOX
 56
 229
 Rg
-0.2
+0.3
 1
 0
 Number
@@ -166,7 +165,7 @@ diff-rate
 diff-rate
 0
 1
-0.1
+0.4
 0.1
 1
 NIL
@@ -206,8 +205,8 @@ PENS
 "pen-0" 1.0 2 -7500403 true "" ""
 
 PLOT
-241
-435
+207
+436
 472
 602
 institution-rules
@@ -217,7 +216,7 @@ sharing
 1.0
 0.0
 0.5
-true
+false
 false
 "" ""
 PENS
@@ -279,11 +278,47 @@ connectivity
 connectivity
 0
 20
-10.0
+6.0
 1
 1
 NIL
 HORIZONTAL
+
+PLOT
+951
+198
+1294
+395
+welfare-in-institutions
+NIL
+NIL
+0.0
+10.0
+0.0
+1.0
+true
+false
+"" ""
+PENS
+"default" 1.0 2 -16777216 true "" ""
+
+PLOT
+1107
+10
+1325
+160
+people-in-institutions
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot count actors with [count myInstitutions > 0]"
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -627,7 +662,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.0.2
+NetLogo 6.0.4
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
