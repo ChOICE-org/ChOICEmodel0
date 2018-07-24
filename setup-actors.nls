@@ -1,3 +1,18 @@
 to setup-actors
+    create-actors 10 [
+        set harvest-rate random-float 1 ;;
+        set share-rate random-float 1 ;;
+        set energy 100 ;;
+        set need random 50 ;;
+        setxy random-xcor random-ycor
+    ]
+end
 
+
+to create-network
+    let k 5 ;;average connectivity
+    ask actors[
+            let neighb n-of (random k) other actors
+            create-links-with neighb
+    ]
 end
