@@ -1,0 +1,10 @@
+to plotingresults
+
+set-current-plot "meanQualityVineyard"
+  ask institutions [
+      set-plot-pen-color color
+      if count myPlots > 0 [
+        plotxy ticks plotsQuality
+      ]
+]
+end
