@@ -3,4 +3,44 @@ actors-own[
   harvest-rate ;; 0-1
   share-rate   ;; 0-1
   energy       ;; resultat consommé - besoins
+  doggybag      ;; variable temporaire pour gérer les partages
 ]
+
+to update-actors
+
+    ask actors[
+        set energy 0
+        set doggybag 0
+    ]
+
+    ;;harvest
+    ask actors [
+    set color pcolor
+    set energy harvest-rate * [q] of patch-here
+    set ([q] of patch-here) ([q] of patch-here - energy)
+    ]
+
+    ;;share
+    ask actors[
+        if any? link-neighbors [ ;;Warning si pas de voisin je partage rien
+        let share share-rate * energy / count link-neighbors
+        ask link-neighbors [
+            set doggybag doggybag + share
+        ]
+        set energy (energy - share-rate * energy)
+        ]
+    ]
+
+    ask actors[
+        set energy (energy + doggybag)
+        set doggybag 0
+    ]
+
+    ;;consomm & die ?
+    ask actors [
+        set energy (energy - need)
+        set size max list energy 0
+        if energy < 0 [die]
+    ]
+
+end
