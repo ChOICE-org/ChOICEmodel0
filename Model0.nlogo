@@ -4,20 +4,29 @@ breed [ rules rule]
 
 __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setup-rules.nls"
            "institutions.nls" "actors.nls" "rules.nls" "patches.nls"]
+patches-own [
+  r  ;; growth rate
+  k  ;; carying capacity
+  q  ;; actual quantity 0 -100
+]
 
 to setup
   clear-all
   setup-patches
-  setup-actors
-  setup-rules
-  setup-institutions
+ ;; setup-actors
+ ;; setup-rules
+;;  setup-institutions
   reset-ticks
 end
 
 
 to go
 
-  tick
+   patches-growth
+   patches-setColor
+
+    tick
+
 end
 @#$#@#$#@
 GRAPHICS-WINDOW

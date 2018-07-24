@@ -1,6 +1,13 @@
 
-patches-own [
-  r  ;; growth rate
-  q  ;; actual quantity
-  k  ;; carying capacity
-]
+
+to patches-setColor 
+  ask patches [
+    set pcolor  scale-color green q 1 100 ]
+end
+
+to patches-growth
+  ask patches [
+    set q  (q + (r * q / k))
+  ]
+  
+end
