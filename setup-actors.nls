@@ -7,6 +7,7 @@ to setup-actors
     setxy random-xcor random-ycor
     set size 2
     set myInstitutions turtle-set nobody
+    set bad-times 0
   ]
   create-network
 end

@@ -5,6 +5,7 @@ actors-own[
   energy       ;; resultat consommé - besoins
   doggybag      ;; variable temporaire pour gérer les partages
   myInstitutions ;; agent set d'institutions auxquelles appartiennent l'acteur
+  bad-times ;; nb steps with energy < 0
 ]
 
 to update-actors
@@ -35,12 +36,20 @@ to update-actors
     set energy (energy + doggybag)
     set doggybag 0
   ]
-  
+
   ;;consomm & die ?
   ask actors [
     set energy (energy - need)
     set size 2;(max list energy 1) / 50
-    if energy < 0 [die]
+    if energy < 0 [
+      set bad-times bad-times + 1
+      actor-udate-links
+    ]
   ]
-  
+end
+
+to actor-udate-links
+  let nb-friends count link-neighbors
+  repeat nb-friends / 3 [ask one-of link-neighbors [die]]
+  repeat nb-friends / 3 [create-link-with one-of other actors]
 end
