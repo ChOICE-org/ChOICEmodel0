@@ -4,11 +4,7 @@ breed [ rules rule]
 
 __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setup-rules.nls"
            "institutions.nls" "actors.nls" "rules.nls" "patches.nls"]
-patches-own [
-  r  ;; growth rate
-  k  ;; carying capacity
-  q  ;; actual quantity 0 -100
-]
+
 
 to setup
   clear-all
@@ -22,12 +18,9 @@ end
 
 
 to go
+  patches-update
 
-   patches-growth
-   patches-setColor
-
-    tick
-
+  tick
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -107,6 +100,21 @@ NIL
 NIL
 NIL
 1
+
+SLIDER
+6
+130
+98
+163
+diff-rate
+diff-rate
+0
+1
+0.5
+0.1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
