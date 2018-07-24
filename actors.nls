@@ -4,6 +4,7 @@ actors-own[
   share-rate   ;; 0-1
   energy       ;; resultat consommé - besoins
   doggybag      ;; variable temporaire pour gérer les partages
+  myInstitutions ;; agent set d'institutions auxquelles appartiennent l'acteur
 ]
 
 to update-actors

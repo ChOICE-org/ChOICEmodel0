@@ -1,3 +1,8 @@
 to setup-rules
-
+  create-rules 10 [
+  set harvest-rate 0.5 + random-float 0.5
+  set share-rate random-float 0.5 
+    set nb-uses 0
+    set hidden? true
+  ]
 end

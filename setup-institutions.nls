@@ -7,12 +7,12 @@ to setup-institutions
       create-institutions 1 [
         set members clique
         let xM mean [xcor] of members
-        let yM mean [xcor] of members
+        let yM mean [ycor] of members
         setxy xM yM
-        init-rule
         revise-rule
         set shape "house"
-        set size 2
+        set size 6
+        ask members [set myInstitutions (turtle-set myInstitutions myself)]
       ]
     ]
   ]

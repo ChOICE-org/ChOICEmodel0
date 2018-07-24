@@ -1,4 +1,5 @@
 rules-own[
   harvest-rate
   share-rate
+  nb-uses
 ]

@@ -19,15 +19,6 @@ end
 to revise-rule
   let hr mean [harvest-rate] of members
   let sr mean [share-rate] of members
-  ask myRule [
-    set harvest-rate hr
-    set share-rate sr]
-end
-
-to init-rule
-  let instit self
-  hatch-rules 1 [
-    ask instit [ set myRule myself]
-    setxy [xcor] of instit [ycor] of instit
-  ]
+  set myRule one-of rules with-min [(harvest-rate - hr) ^ 2   + (share-rate - sr) ^ 2]
+  ask myRule [set nb-uses nb-uses + 1]
 end
