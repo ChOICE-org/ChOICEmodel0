@@ -10,9 +10,9 @@ end
 
 
 to create-network
-    let k 5 ;;average connectivity
+    let connectivity 5 ;;average connectivity
     ask actors[
-            let neighb n-of (random k) other actors
+            let neighb n-of (random connectivity) other actors
             create-links-with neighb
     ]
 end
