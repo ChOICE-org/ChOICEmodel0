@@ -1,7 +1,7 @@
 institutions-own[
   members    ;; actors parts of institution
   attachment ;; relation of actors to the institution (?)
-  rule ;; rule promoted by the institution
+  myRule ;; rule promoted by the institution
 ]
 
 to init-members
