@@ -1,10 +1,10 @@
 to setup-patches
 
- ask patches [
-    set pcolor  green
- set r 0.2
- set k 100
- set q random 100
-   
+ask patches [
+	set r 0.2
+	set k 100
+	set q random 100
  ]
+ repeat 2 [ diffuse q 1 ]
+ patches-setColor
 end

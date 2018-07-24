@@ -9,10 +9,9 @@ __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setu
 to setup
   clear-all
   setup-patches
-   patches-setColor
- ;; setup-actors
- ;; setup-rules
-;;  setup-institutions
+  setup-actors
+  setup-rules
+  setup-institutions
   reset-ticks
 end
 
@@ -110,7 +109,7 @@ diff-rate
 diff-rate
 0
 1
-0.5
+0.2
 0.1
 1
 NIL
