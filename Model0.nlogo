@@ -1,4 +1,4 @@
-globals[ production needs max-distance-to-rule]
+globals[ production needs]
 breed [ actors actor]
 breed [ institutions institution]
 breed [ rules rule]
@@ -166,17 +166,17 @@ diff-rate
 diff-rate
 0
 1
-0.3
+0.1
 0.1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-9
-431
-173
-464
+7
+428
+133
+461
 making-mate-rate
 making-mate-rate
 0
@@ -240,6 +240,35 @@ false
 "" ""
 PENS
 "default" 1.0 2 -16777216 true "" ""
+
+PLOT
+727
+438
+981
+605
+connectivity
+NIL
+NIL
+0.0
+10.0
+0.0
+1.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot mean [count my-links] of actors"
+
+INPUTBOX
+7
+464
+115
+524
+max-distance-to-rule
+0.15
+1
+0
+Number
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -583,7 +612,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.0.4
+NetLogo 6.0.2
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
