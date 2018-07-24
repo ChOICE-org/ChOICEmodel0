@@ -1,0 +1,6 @@
+actors-own[
+  need         ;; 0-100
+  harvest-rate ;; 0-1
+  share-rate   ;; 0-1
+  energy       ;; resultat consommé - besoins
+]

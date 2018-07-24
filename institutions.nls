@@ -1,0 +1,4 @@
+institutions-own[
+  members    ;; actors parts of institution
+  attachment ;; relation of actors to the institution (?)
+]

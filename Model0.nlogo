@@ -2,7 +2,16 @@ breed [ actors actor]
 breed [ institutions institution]
 breed [ rules rule]
 
-__includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls"]
+__includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls"
+           "institutions.nls" "actors.nls" "rules.nls"]
+
+patches-own [
+  r  ;; growth rate
+  q  ;; actual quantity
+  k  ;; carying capacity
+]
+
+
 
 to setup
   clear-all
@@ -19,13 +28,13 @@ to go
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
+130
 10
-647
-448
+538
+419
 -1
 -1
-13.0
+4.0
 1
 10
 1
@@ -35,10 +44,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--16
-16
--16
-16
+0
+99
+0
+99
 0
 0
 1
