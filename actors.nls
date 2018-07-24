@@ -7,32 +7,30 @@ actors-own[
 ]
 
 to update-actors
-<<<<<<< HEAD
-
-    ask actors[
-        set energy 0
-        set doggybag 0
-    ]
-
-    ;;harvest
-    ask actors [
-    set energy harvest-rate * q
-    set q (q - energy) ;;() ([q] of patch-here - energy)
-    show q
-    ]
-
-    ;;share
-    ask actors[
-        if any? link-neighbors [ ;;Warning si pas de voisin je partage rien
-        let share share-rate * energy / count link-neighbors
-        ask link-neighbors [
-            set doggybag doggybag + share
-        ask link-with myself [set thickness share]
-        ]
-        set energy (energy - share-rate * energy)
-        ]
-=======
   set needs sum [need] of actors
+  ask actors[
+    set energy 0
+    set doggybag 0
+  ]
+  
+  ;;harvest
+  ask actors [
+    set energy harvest-rate * q
+    set q (q - energy)
+    ;;show q
+  ]
+  
+  ;;share
+  ask actors[
+    if any? link-neighbors [ ;;Warning si pas de voisin je partage rien
+      let share share-rate * energy / count link-neighbors
+      ask link-neighbors [
+        set doggybag doggybag + share
+        ask link-with myself [set thickness share]
+      ]
+      set energy (energy - share-rate * energy)
+    ]
+  ]
   
   ask actors[
     set energy 0
@@ -53,7 +51,6 @@ to update-actors
         set doggybag doggybag + share
       ]
       set energy (energy - share-rate * energy)
->>>>>>> origin/master
     ]
   ]
   
@@ -68,5 +65,5 @@ to update-actors
     set size 2;(max list energy 1) / 50
     if energy < 0 [die]
   ]
- 
+  
 end

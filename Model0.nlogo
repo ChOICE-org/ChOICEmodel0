@@ -10,17 +10,17 @@ __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setu
 to setup
   clear-all
   setup-patches
-   patches-setColor
+  patches-setColor
   setup-actors
- ;; setup-rules
-;;  setup-institutions
+  ;; setup-rules
+  ;;  setup-institutions
   reset-ticks
 end
 
 
 to go
   patches-update
-update-actors
+  update-actors
   tick
 end
 @#$#@#$#@
@@ -145,22 +145,22 @@ INPUTBOX
 56
 229
 Rg
-0.0
+0.2
 1
 0
 Number
 
 SLIDER
-51
-307
-223
-340
+8
+128
+100
+161
 diff-rate
 diff-rate
 0
-100
-50.0
 1
+0.3
+0.1
 1
 NIL
 HORIZONTAL
@@ -507,7 +507,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.0.3
+NetLogo 6.0.2
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
