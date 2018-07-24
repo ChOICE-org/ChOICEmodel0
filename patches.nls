@@ -10,9 +10,16 @@ to patches-setColor
 end
 
 to patches-update
+  set production 0
   ask patches [
+    set production production + (r * q / k)
     set q  (q + (r * q / k))
   ]
   diffuse q diff-rate
+  ask patches[
+    if q > k [
+      set q k
+    ]
+  ]
   patches-setColor
 end

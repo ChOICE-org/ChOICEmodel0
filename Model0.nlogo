@@ -1,3 +1,4 @@
+globals[ production needs]
 breed [ actors actor]
 breed [ institutions institution]
 breed [ rules rule]
@@ -18,7 +19,7 @@ end
 
 to go
   patches-update
-
+  update-actors
   tick
 end
 @#$#@#$#@
@@ -109,11 +110,59 @@ diff-rate
 diff-rate
 0
 1
-0.2
+0.5
 0.1
 1
 NIL
 HORIZONTAL
+
+PLOT
+545
+10
+745
+160
+Production
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot production"
+"pen-1" 1.0 0 -7500403 true "" "plot needs"
+
+PLOT
+751
+11
+951
+161
+Actors
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot count turtles"
+
+INPUTBOX
+6
+169
+56
+229
+Rg
+1.0
+1
+0
+Number
 
 @#$#@#$#@
 ## WHAT IS IT?

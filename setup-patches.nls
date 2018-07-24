@@ -1,7 +1,7 @@
 to setup-patches
 
 ask patches [
-	set r 0.2
+	set r Rg
 	set k 100
 	set q random 100
  ]

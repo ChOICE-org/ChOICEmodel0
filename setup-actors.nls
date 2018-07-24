@@ -1,9 +1,9 @@
 to setup-actors
-    create-actors 10 [
+    create-actors 100 [
         set harvest-rate random-float 1 ;;
         set share-rate random-float 1 ;;
-        set energy 100 ;;
-        set need random 50 ;;
+        set energy 0 ;;
+        set need 5 + random 5 ;;
         setxy random-xcor random-ycor
     ]
     create-network

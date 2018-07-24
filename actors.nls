@@ -7,6 +7,7 @@ actors-own[
 ]
 
 to update-actors
+  set needs sum [need] of actors
   
   ask actors[
     set energy 0
@@ -15,7 +16,6 @@ to update-actors
   
   ;;harvest
   ask actors [
-    set color pcolor
     set energy harvest-rate * [q] of patch-here
     set q ([q] of patch-here - energy)
   ]
@@ -39,7 +39,7 @@ to update-actors
   ;;consomm & die ?
   ask actors [
     set energy (energy - need)
-    set size max list energy 0
+    set size 2;(max list energy 1) / 50
     if energy < 0 [die]
   ]
  
