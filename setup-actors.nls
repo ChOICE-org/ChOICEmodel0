@@ -6,11 +6,12 @@ to setup-actors
         set need random 50 ;;
         setxy random-xcor random-ycor
     ]
+    create-network
 end
 
 
 to create-network
-    let connectivity 5 ;;average connectivity
+    let connectivity 6 ;;average connectivity
     ask actors[
             let neighb n-of (random connectivity) other actors
             create-links-with neighb
