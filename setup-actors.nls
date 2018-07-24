@@ -5,10 +5,10 @@ to setup-actors
         set energy 10 ;;
         set need 10 ;;random 10 ;;
         setxy random-xcor random-ycor
-  set size energy  
+  set size energy
   ]
     create-network
-  
+
 end
 
 
