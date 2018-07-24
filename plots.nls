@@ -1,10 +1,21 @@
 to plotingresults
 
-set-current-plot "meanQualityVineyard"
+set-current-plot "institution-sizes"
   ask institutions [
       set-plot-pen-color color
-      if count myPlots > 0 [
-        plotxy ticks plotsQuality
-      ]
+        plotxy ticks count members
 ]
+  set-current-plot "institution-rules"
+  ask institutions [
+      set-plot-pen-color color
+        plotxy get-harvest-rate get-share-rate
+]
+  
+    set-current-plot "actor-rules"
+  clear-plot
+  ask actors [
+      set-plot-pen-color color
+        plotxy harvest-rate share-rate
+]
+  
 end

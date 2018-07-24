@@ -4,7 +4,7 @@ breed [ institutions institution]
 breed [ rules rule]
 
 __includes["setup-patches.nls" "setup-actors.nls" "setup-institutions.nls" "setup-rules.nls"
-           "institutions.nls" "actors.nls" "rules.nls" "patches.nls"]
+           "institutions.nls" "actors.nls" "rules.nls" "patches.nls" "plots.nls"]
 
 
 to setup
@@ -23,7 +23,12 @@ to go
   patches-update
   update-actors
   update-institutions
+  plotingresults
   tick
+end
+
+to plot-members
+
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -105,10 +110,10 @@ NIL
 1
 
 PLOT
-545
-10
-745
-160
+563
+22
+880
+185
 Production
 NIL
 NIL
@@ -117,20 +122,20 @@ NIL
 0.0
 10.0
 true
-false
+true
 "" ""
 PENS
-"default" 1.0 0 -16777216 true "" "plot production"
-"pen-1" 1.0 0 -7500403 true "" "plot needs"
+"production" 1.0 0 -16777216 true "" "plot production"
+"needs" 1.0 0 -7500403 true "" "plot needs"
 
 PLOT
-751
-11
-951
-161
+903
+13
+1103
+163
 Actors
-NIL
-NIL
+time
+Starving
 0.0
 10.0
 0.0
@@ -139,7 +144,7 @@ true
 false
 "" ""
 PENS
-"default" 1.0 0 -16777216 true "" "plot count turtles"
+"pen-0" 1.0 0 -7500403 true "" "plot count actors with [energy < 0]"
 
 INPUTBOX
 6
@@ -176,11 +181,65 @@ making-mate-rate
 making-mate-rate
 0
 1
-0.2
+0.1
 0.1
 1
 NIL
 HORIZONTAL
+
+PLOT
+560
+201
+932
+396
+institution-sizes
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"pen-0" 1.0 2 -7500403 true "" ""
+
+PLOT
+241
+435
+472
+602
+institution-rules
+harvesting
+sharing
+0.5
+1.0
+0.0
+0.5
+true
+false
+"" ""
+PENS
+"default" 1.0 2 -16777216 true "" ""
+
+PLOT
+490
+437
+715
+607
+actor-rules
+harvesting
+sharing
+0.5
+1.0
+0.0
+0.5
+false
+false
+"" ""
+PENS
+"default" 1.0 2 -16777216 true "" ""
 
 @#$#@#$#@
 ## WHAT IS IT?
