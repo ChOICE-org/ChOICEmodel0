@@ -6,7 +6,7 @@ patches-own [
 
 to patches-setColor 
   ask patches [
-    set pcolor  scale-color green q 1 100 ]
+    set pcolor  scale-color lime q 120 1 ]
 end
 
 to patches-update

@@ -26,7 +26,8 @@ to update-members
   let xM mean [xcor] of members
   let yM mean [ycor] of members
   setxy xM yM
-    set hidden? false
+  set size count members / 10
+  set hidden? false
   ] [set hidden? true]
 end
 

@@ -15,9 +15,12 @@ set-current-plot "institution-sizes"
   
   
   set-current-plot "institution-rules"
+    clear-plot
   ask institutions [
       set-plot-pen-color color
-        plotxy get-harvest-rate get-share-rate
+      repeat max list 1 count members [
+        plotxy (get-harvest-rate + (random-float 0.02) - 0.01) (get-share-rate + (random-float 0.02) - 0.01)
+     ]
 ]
   
     set-current-plot "actor-rules"

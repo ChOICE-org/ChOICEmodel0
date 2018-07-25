@@ -146,21 +146,21 @@ PENS
 "pen-0" 1.0 0 -7500403 true "" "plot count actors with [energy < 0]"
 
 INPUTBOX
-6
-169
-56
-229
+7
+183
+57
+243
 Rg
-0.3
+0.1
 1
 0
 Number
 
 SLIDER
 8
-128
+148
 100
-161
+181
 diff-rate
 diff-rate
 0
@@ -172,10 +172,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-7
-428
-133
-461
+3
+333
+129
+366
 making-mate-rate
 making-mate-rate
 0
@@ -259,10 +259,10 @@ PENS
 "default" 1.0 0 -16777216 true "" "plot mean [count my-links] of actors"
 
 INPUTBOX
-7
-464
-115
-524
+3
+369
+111
+429
 max-distance-to-rule
 0.15
 1
@@ -270,10 +270,10 @@ max-distance-to-rule
 Number
 
 SLIDER
-7
-234
-108
-267
+8
+291
+109
+324
 connectivity
 connectivity
 0
@@ -662,7 +662,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.0.4
+NetLogo 6.0.2
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
